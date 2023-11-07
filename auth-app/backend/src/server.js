@@ -21,11 +21,11 @@ app.use(cookieParser()); // Zum Extrahieren von vom Client gesendeten Cookies
 
 // Definiere die benoetigten CORS Optionen, um ein Frontend an den Server anzuschliessen
 const corsOptions = {
-  origin: "http://localhost:5173", // Konfiguration fuer erlaubte Zugriffsquellen (* heisst alle duerfen)
-  credentials: true, // Erlaube, dass ein Cookie mit Token im Header mit versendet werden kann
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // erlaubte HTTP Methoden bei Zugriffen
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
+    "origin": "http://localhost:5173", // Konfiguration fuer erlaubte Zugriffsquellen (* heisst alle duerfen)
+    "credentials": true, // Erlaube, dass ein Cookie mit Token im Header mit versendet werden kann
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", // erlaubte HTTP Methoden bei Zugriffen
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
 };
 app.use(cors(corsOptions));
 
@@ -35,8 +35,9 @@ await connectToDb();
 // ------------------------------------------- Eigene Middleware Funktionen -------------------------------------------
 
 // ------------------------------------------- Router Definitionen -------------------------------------------
-app.use("/auth", authRouter);
-app.use("/users", userRouter);
+app.use('/auth', authRouter);
+app.use('/users', userRouter);
+
 
 // Starte des Server
 app.listen(process.env.PORT, () => {
