@@ -7,7 +7,8 @@ import * as authController from '../controllers/auth.controller.js';
 const router = Router();
 
 // Definiere Endpoints für authRouter
-router.post('/register', authController.registerNewUser);
+router.post('/register/organizer', authController.registerNewOrganizer);
+router.post('/register/user', authController.registerNewUser);
 router.post('/login', authController.loginUser);
 router.get('/logout', authController.logoutUser);
 
