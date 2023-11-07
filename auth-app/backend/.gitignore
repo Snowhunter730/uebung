@@ -25,3 +25,8 @@ dist-ssr
 
 # environment
 .env
+
+
+# Tests
+
+/src/frontend
